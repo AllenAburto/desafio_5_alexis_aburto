@@ -2,7 +2,7 @@ let taskId = 1;
 let activeTasks = 0;
 let completedTasks = 0;
 let deletedTasks = 0;
-let showCompleted = true; // Inicialmente mostrar tareas completadas
+let showCompleted = true;
 
 function addTask() {
     const taskInput = document.getElementById("taskInput");
@@ -21,7 +21,6 @@ function addTask() {
                               </td>`;
 
         if (!showCompleted) {
-            // Ocultar tarea completada si showCompleted es false
             tableRow.style.display = "none";
         }
 
@@ -53,10 +52,8 @@ function deleteTask(id) {
     const checkbox = tableRow.querySelector("input[type='checkbox']");
     
     if (!checkbox.checked) {
-        // Si la tarea no estaba completada, entonces decrementa activeTasks
         activeTasks--;
     } else {
-        // Si la tarea estaba completada, decrementa completedTasks
         completedTasks--;
     }
     
@@ -78,9 +75,9 @@ function toggleCompleted() {
     taskRows.forEach((row) => {
         const checkbox = row.querySelector("input[type='checkbox']");
         if (checkbox.checked && !showCompleted) {
-            row.style.display = "none"; // Ocultar tareas completadas
+            row.style.display = "none";
         } else {
-            row.style.display = "table-row"; // Mostrar tareas activas y tareas completadas (si showCompleted es true)
+            row.style.display = "table-row";
         }
     });
 }
