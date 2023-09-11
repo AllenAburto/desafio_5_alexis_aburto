@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Listado de Tareas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Listado de Tareas</h1>
+        <input type="text" id="taskInput" placeholder="Agregar nueva tarea">
+        <button onclick="addTask()">Agregar</button>
+        <button class="ocultar" onclick="toggleCompleted()">Mostrar/ocultar Completadas</button>
+        <table id="taskTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tarea</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="taskList"></tbody>
+        </table>
+        <div class="resumen">
+            <p>Tareas Activas: <span id="activeCount">0</span></p>
+            <p>Tareas Terminadas: <span id="completedCount">0</span></p>
+            <p>Tareas Eliminadas: <span id="deletedCount">0</span></p>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
